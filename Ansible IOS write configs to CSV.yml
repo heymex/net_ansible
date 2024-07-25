@@ -1,0 +1,39 @@
+- hosts: "*"
+  gather_facts: no
+  vars:
+    output_path: "./reports/"
+    filename: "device_report_{{ date }}.csv"
+  
+  tasks:
+  - name: Gather all legacy facts
+    cisco.ios.ios_facts:
+      gather_subset: all
+      
+  - name: CSV - Generate output filename
+    set_fact: date="{{lookup('pipe','date +%Y%m%d')}}"
+    run_once: true
+
+  - name: CSV - Create file and set the header
+    lineinfile:
+      dest: "{{ output_path }}/{{ filename }}"
+      line:
+        config
+      create: yes
+      state: present
+
+  - name: CSV - Get IOS devices facts
+    set_fact:
+      csv_tmp: >
+        {{ ansible_net_config }}
+
+  - name: CSV - Write information into .csv file
+    lineinfile:
+      insertafter: EOF
+      dest: "{{ output_path }}/{{ filename }}"
+      line: "{{ csv_tmp }}"
+
+  - name: CSV - Blank lines removal
+    lineinfile:
+      path: "./{{ output_path }}/{{ filename }}"
+      state: absent
+      regex: '^\s*$'
