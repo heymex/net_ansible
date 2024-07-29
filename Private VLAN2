@@ -1,0 +1,60 @@
+vlan 700
+  private-vlan primary
+  private-vlan association 701
+!
+vlan 701
+  private-vlan isolated
+  
+interface GigabitEthernet1/0/47
+ description * LAB ESX
+ switchport access vlan 701
+ switchport private-vlan host-association 700 701
+ switchport mode private-vlan host
+ 
+- hosts: "*"
+  gather_facts: no
+  tasks:
+    - name: Configure IoT Private VLAN
+      cisco.ios.ios_vlans:
+        config:
+          - name: iot_pvlan_primary
+            vlan_id: 700
+            private_vlan:
+              type: primary
+              associated: 
+                - 701
+          - name: iot_pvlan_isolated
+            vlan_id: 701
+            private_vlan:
+              type: isloated
+        state: merged                    
+    
+    
+{"mtu": 1500, "name": "VLAN0700", "private_vlan": {"associated": [701], "type": "primary"}, "shutdown": "disabled", "state": "active", "vlan_id": 700}    
+{"mtu": 1500, "name": "VLAN0701", "private_vlan": {"type": "isolated"}, "shutdown": "disabled", "state": "active", "vlan_id": 701}
+{"mtu": 1500, "name": "pvlan-primary", "private_vlan": {"type": "primary"}, "shutdown": "disabled", "state": "active", "vlan_id": 750}
+{"mtu": 1500, "name": "pvlan-community", "private_vlan": {"type": "community"}, "shutdown": "disabled", "state": "active", "vlan_id": 752}
+
+
+- hosts: "*"
+  gather_facts: no
+  tasks:
+    - name: Replaces device configuration of listed VLANs with provided configuration
+      cisco.ios.ios_vlans:
+        config:
+          - vlan_id: 751
+            name: pvlan-isolated
+            private_vlan:
+              type: isolated
+          - vlan_id: 752
+            name: pvlan-community
+            private_vlan:
+              type: community
+          - vlan_id: 750
+            name: pvlan-primary
+            private_vlan:
+              type: primary
+              associated:
+                - 751
+                - 752
+        state: merged   
