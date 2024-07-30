@@ -1,0 +1,22 @@
+- hosts: "*"
+  gather_facts: no
+  tasks:
+    - name: Replaces device configuration of listed VLANs with provided configuration
+      cisco.ios.ios_vlans:
+        config:
+          - vlan_id: 751
+            name: pvlan-isolated
+            private_vlan:
+              type: isolated
+          - vlan_id: 752
+            name: pvlan-community
+            private_vlan:
+              type: community
+          - vlan_id: 750
+            name: pvlan-primary
+            private_vlan:
+              type: primary
+              associated:
+                - 751
+                - 752
+        state: merged  

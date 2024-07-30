@@ -1,0 +1,8 @@
+- hosts: "*"
+  gather_facts: no
+
+  tasks:
+    - name: configurable backup path
+      ansible.netcommon.cli_backup:
+        filename: backup.cfg
+        dir_path: /home/user

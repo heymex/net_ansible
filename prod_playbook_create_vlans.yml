@@ -168,6 +168,4 @@
             vlan_id: 999
             state: active
             shutdown: disabled  
-
-
         state: merged   
