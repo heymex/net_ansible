@@ -1,0 +1,9 @@
+[sw-mcd-02]
+10.1.0.18
+
+[sw-mcd-02:vars]
+ansible_connection=ansible.netcommon.network_cli
+ansible_network_os=cisco.ios.ios
+ansible_user=rctcadmin
+ansible_password=passwordgoeshere
+ansible_become=no
