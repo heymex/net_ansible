@@ -1,0 +1,9 @@
+[freeztp-servers]
+172.29.249.46
+172.29.120.230
+
+[freeztp-servers:vars]
+ansible_connection=ssh
+ansible_user=ansible
+ansible_ssh_pass=migrant6vermouth3DOCK8charmer
+ansible_sudo_pass=migrant6vermouth3DOCK8charmer
