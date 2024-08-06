@@ -8,163 +8,163 @@
             vlan_id: 5
             state: active
             shutdown: disabled
-		  - name: l2_management-wireless
+          - name: 'l2_management-wireless'
             vlan_id: 10
             state: active
             shutdown: disabled
-		  - name: l2_wireless-guest
+          - name: 'l2_wireless-guest'
             vlan_id: 13
             state: active
             shutdown: disabled
-		  - name: l2_wireless-byod-acad
+          - name: 'l2_wireless-byod-acad'
             vlan_id: 14
             state: active
             shutdown: disabled
-		  - name: l2_wireless_registration
+          - name: 'l2_wireless_registration'
             vlan_id: 50
             state: active
             shutdown: disabled
-		  - name: l2_wireless_quarantine
+          - name: 'l2_wireless_quarantine'
             vlan_id: 51
             state: active
             shutdown: disabled
-		  - name: l2_wsu_crestron
+          - name: 'l2_wsu_crestron'
             vlan_id: 71
             state: active
             shutdown: disabled
-		  - name: l2_printers-shared
+          - name: 'l2_printers-shared'
             vlan_id: 72
             state: active
             shutdown: disabled            
-		  - name: l2_services-cap-server
+          - name: 'l2_services-cap-server'
             vlan_id: 87
             state: active
             shutdown: disabled
-		  - name: l2_services-shared-minnstate
+          - name: 'l2_services-shared-minnstate'
             vlan_id: 88
             state: active
             shutdown: disabled
-		  - name: l2_facilities-building-control
+          - name: 'l2_facilities-building-control'
             vlan_id: 89
             state: active
             shutdown: disabled
-		  - name: l2_phones-emergency
+          - name: 'l2_phones-emergency'
             vlan_id: 94
             state: active
             shutdown: disabled
-		  - name: l2_simulation-rctc
+          - name: 'l2_simulation-rctc'
             vlan_id: 96
             state: active
             shutdown: disabled  
-		  - name: l2_simulation-wsu
+          - name: 'l2_simulation-wsu'
             vlan_id: 97
             state: active
             shutdown: disabled  
-		  - name: l2_pyxis-medstation
+          - name: 'l2_pyxis-medstation'
             vlan_id: 98
             state: active
             shutdown: disabled  
-		  - name: l2_wsu_warrior
+          - name: 'l2_wsu_warrior'
             vlan_id: 99
             state: active
             shutdown: disabled  
-		  - name: l2_wireless-employee
+          - name: 'l2_wireless-employee'
             vlan_id: 108
             state: active
             shutdown: disabled  
-		  - name: l2_wireless-academic
+          - name: 'l2_wireless-academic'
             vlan_id: 114
             state: active
             shutdown: disabled  
-		  - name: l2_acad-vdi
+          - name: 'l2_acad-vdi'
             vlan_id: 115
             state: active
             shutdown: disabled  
-		  - name: l2_admin-vdi
+          - name: 'l2_admin-vdi'
             vlan_id: 124
             state: active
             shutdown: disabled  
-		  - name: l2_services-it-tsc
+          - name: 'l2_services-it-tsc'
             vlan_id: 148
             state: active
             shutdown: disabled  
-		  - name: l2_wsu_its
+          - name: 'l2_wsu_its'
             vlan_id: 152
             state: active
             shutdown: disabled  
-		  - name: l2_wsu_faculty
+          - name: 'l2_wsu_faculty'
             vlan_id: 153
             state: active
             shutdown: disabled  
-		  - name: l2_dmz-static-public-116
+          - name: 'l2_dmz-static-public-116'
             vlan_id: 156
             state: active
             shutdown: disabled  
-		  - name: l2_dmz-services-public-112
+          - name: 'l2_dmz-services-public-112'
             vlan_id: 158
             state: active
             shutdown: disabled  
-		  - name: l2_dmz-services-public-113
+          - name: 'l2_dmz-services-public-113'
             vlan_id: 160
             state: active
             shutdown: disabled       
-		  - name: l2_dmz-services-public-114
+          - name: 'l2_dmz-services-public-114'
             vlan_id: 162
             state: active
             shutdown: disabled   
-		  - name: l2_dmz-media-public-115
+          - name: 'l2_dmz-media-public-115'
             vlan_id: 164
             state: active
             shutdown: disabled   
-		  - name: l2_services-media
+          - name: 'l2_services-media'
             vlan_id: 166
             state: active
             shutdown: disabled   
-		  - name: l2_vm-management
+          - name: 'l2_vm-management'
             vlan_id: 202
             state: active
             shutdown: disabled   
-		  - name: l2_facilities-power
+          - name: 'l2_facilities-power'
             vlan_id: 203
             state: active
             shutdown: disabled   
-		  - name: l2_services-shared-rctc
+          - name: 'l2_services-shared-rctc'
             vlan_id: 204
             state: active
             shutdown: disabled   
-		  - name: l2_wan-minnstate
+          - name: 'l2_wan-minnstate'
             vlan_id: 300
             state: active
             shutdown: disabled   
-		  - name: l2_wan-eduroam
+          - name: 'l2_wan-eduroam'
             vlan_id: 320
             state: active
             shutdown: disabled   
-		  - name: l2_lab_services_shared
+          - name: 'l2_lab_services_shared'
             vlan_id: 800
             state: active
             shutdown: disabled
-		  - name: l2_lab_rctc
+          - name: 'l2_lab_rctc'
             vlan_id: 801
             state: active
             shutdown: disabled  
-		  - name: l2_lab_academic
+          - name: 'l2_lab_academic'
             vlan_id: 899
             state: active
             shutdown: disabled  
-		  - name: l2_pci
+          - name: 'l2_pci'
             vlan_id: 901
             state: active
             shutdown: disabled  
-		  - name: l2_internet-nursing
+          - name: 'l2_internet-nursing'
             vlan_id: 991
             state: active
             shutdown: disabled
-		  - name: l2_services-media-wifi
+          - name: 'l2_services-media-wifi'
             vlan_id: 994
             state: active
             shutdown: disabled  
-		  - name: l2_pci-firewall
+          - name: 'l2_pci-firewall'
             vlan_id: 999
             state: active
             shutdown: disabled  
