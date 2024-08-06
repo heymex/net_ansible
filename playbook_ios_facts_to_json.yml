@@ -1,0 +1,13 @@
+---
+- hosts: '*'
+  gather_facts: no
+  connection: network_cli
+
+
+  tasks:
+
+  - name: GATHER FACTS TO JSON
+    register: iosfacts_out
+    ios_facts:
+
+  - copy: content="{{ iosfacts_out | to_nice_json }}" dest="json/{{inventory_hostname}}_iosfacts.json"
