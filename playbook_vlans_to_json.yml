@@ -1,0 +1,12 @@
+- hosts: "*"
+  gather_facts: no
+  tasks:
+    - name: Gather listed vlans with provided configurations
+      cisco.ios.ios_vlans:
+        state: gathered
+      register: vlans
+
+    - name: Save VLAN facts to file
+      copy:
+        content: "{{ vlans | to_nice_json }}"
+        dest: "json/{{inventory_hostname}}_vlan_facts.json"

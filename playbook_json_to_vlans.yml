@@ -1,0 +1,32 @@
+---
+- hosts: "*"
+  gather_facts: no
+  tasks:
+    - name: Load VLAN facts from file
+      slurp:
+        src: "json/vlan_facts.json"
+      register: vlan_file
+
+    - name: Parse VLAN facts
+      set_fact:
+        vlans: "{{ vlan_file.content | b64decode | from_json }}"
+
+    - name: Configure VLANs on target device
+      cisco.ios.ios_vlans:
+        provider:
+          host: "{{ ansible_host }}"
+          username: "{{ ansible_user }}"
+          password: "{{ ansible_password }}"
+#        state: present
+        vlan_id: "{{ item.key }}"
+        vlan_name: "{{ item.value.name }}"
+      loop: "{{ vlans | dict2items }}"
+
+
+#- name: Deploy standard RCTC VLANs to edge devices
+#      cisco.ios.ios_vlans:
+#        config:
+#          - name: l2_management_wired
+#            vlan_id: 5
+#            state: active
+#            shutdown: disabled
