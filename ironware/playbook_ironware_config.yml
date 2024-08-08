@@ -1,0 +1,10 @@
+---
+- hosts: "*"
+  gather_facts: no
+  tasks:
+    - name: Configure a new user
+      community.network.ironware_config:
+        lines:
+          - username test-automation password qs9Uxx3orZeXbsRd2FDR
+        #parents: ['interface ethernet 1/2']
+

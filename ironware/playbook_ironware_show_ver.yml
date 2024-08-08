@@ -1,0 +1,8 @@
+---
+- hosts: "*"
+  gather_facts: no
+  tasks:
+    - name: Run show version
+      community.network.ironware_command:
+        commands:
+          - show version
